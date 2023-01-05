@@ -35,9 +35,8 @@ body {
   overflow-x: hidden;
   font-family: "Axiforma";
   height: 100%;
-  line-height: 1.5;
+  /* line-height: 1.5; */
   -ms-text-size-adjust: 100%;
-  user-select: none;
   background-color: white;
   scroll-behavior: smooth;
 }
@@ -164,7 +163,7 @@ a:hover {
   text-align: center;
   height: 100vh;
   width: 100vw;
-  background: rgba(0, 0, 0, 61%);
+  background: rgba(0, 0, 0, 85%);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -205,17 +204,35 @@ a:hover {
 
 /* Navigation    */
 .nav {
-  position: relative;
+ position: relative;
 }
 .nav-wrap-main {
-  right: 10%;
-  position: absolute;
-  top: 30px;
-  width: 80%;
+    position: absolute;
+    top: 10px;
+    width: 100%;
+    background: transparent;
+    right: 0;
+    left: 0;
+    transition: all ease-in-out .5s;
+}
+.nav-fixed{
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  width: 100%;
+  right: 0;
+  left: 0;
+  transition: all ease-in-out .5s;
+}
+.animation-nav{
+  background: #36716d;
+  top: 0;
+  padding-bottom:95px;
+  transition: all ease-in-out .5s;
 }
 .nav-main {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
 }
 
@@ -242,9 +259,9 @@ a:hover {
   position: absolute;
   display: flex;
   height: 100%;
-  width: 300%;
-  left: -200%;
-  animation: slides 10s ease-in-out infinite;
+  width: 500%;
+  left: -400%;
+  animation: slides 15s ease-in-out infinite;
 }
 
 .slideshow-img-container {
@@ -272,15 +289,15 @@ a:hover {
   }
 
   50% {
-    left: -100%;
+    left: -200%;
   }
 
   66.6% {
-    left: -200%;
+    left: -300%;
   }
 
   83% {
-    left: -200%;
+    left: -400%;
   }
 
   100% {
@@ -291,7 +308,7 @@ a:hover {
 .slide {
   width: 100%;
   display: none;
-  animation-duration: 0.2s;
+  animation-duration: 2s;
 }
 
 .main-slide-img-2,
@@ -335,7 +352,7 @@ a:hover {
   padding-bottom: 5px;
 }
 .slide-info p {
-  font-size: 22px;
+  font-size: 18px;
 }
 .controls {
   border: 1px solid transparent;
@@ -391,9 +408,9 @@ a:hover {
   font-weight: 600;
   margin-top: 20px;
 }
-.about-us h1,
-p {
+.about-us h1, .about-us h2, p {
   color: white;
+  padding-bottom: 10px;
 }
 .uniques {
   margin-top: 12em;
@@ -447,6 +464,9 @@ p {
   text-align: center;
   align-items: center;
   margin: 8em 0 3em;
+}
+.main-content__info2 {
+  justify-content: space-around;
 }
 .main-content__desc p {
   padding: 25px;
@@ -780,6 +800,7 @@ blockquote span {
   background-color: white;
   transition: ease 0.5s;
   border-radius: 4px;
+  color:#1a202c;
 }
 .form-footer:hover {
   background-color: gainsboro;
@@ -859,9 +880,20 @@ blockquote span {
   .burger {
     display: flex;
   }
+  .main-slide-img-2, .main-slide-img-3, .main-slide-img{
+    background-attachment:scroll;
+  }
+  
   p {
-    font-size: 16px;
-    text-align: center;
+    font-size: 14px;
+  }
+  .nav-main{
+    justify-content: space-between;
+    padding: 10px;
+  }
+
+  .slide-title {
+    font-size: 40px;
   }
   .about-us__span {
     display: none;
@@ -878,13 +910,16 @@ blockquote span {
     align-items: center;
     justify-content: space-between;
   }
-
+.modal-wrapper__img{
+  display: none;
+}
   .nav-group.show {
     display: block;
     padding: 20px 18px;
     position: absolute;
-    top: 53px;
-    right: -13px;
+    top: 75px;
+    right: 0;
+    left: 0;
     /* background-color: #36716d; */
     z-index: 2;
     height: 350px;
@@ -897,12 +932,9 @@ blockquote span {
   .nav-item__group {
     display: none;
   }
-  .nav-wrap-main {
-    top: 20px;
-    width: 95%;
-  }
+
   .container {
-    width: 97%;
+    width: 95%;
   }
   .modal h2 {
     color: #ffffffc9;
@@ -918,7 +950,7 @@ blockquote span {
     padding: 8px 50px;
   }
   .logo a {
-    font-size: 18px;
+    font-size: 16px;
   }
   .company-item__desc p,
   .company-gallery p {
@@ -935,7 +967,7 @@ blockquote span {
     font-size: 35px;
   }
   .controls {
-    top: 36em;
+    top: 33em;
   }
 
   #right-arrow {
@@ -946,7 +978,7 @@ blockquote span {
   }
 
   .about-us {
-    padding: 10px 0;
+    padding: 70px 0;
   }
 
   .about-company__title {
@@ -967,7 +999,8 @@ blockquote span {
     width: 300px;
   }
   .call {
-    bottom: 160px;
+    bottom: 40px;
+    right: 40px;
   }
   .main-content__desc {
     margin-bottom: 30px;
@@ -1020,7 +1053,7 @@ blockquote span {
     font-size: 22px;
   }
   .footer-item {
-    margin-bottom: 35px;
+    margin-bottom: 45px;
     width: 100%;
   }
   .footer-form {
@@ -1068,5 +1101,18 @@ blockquote span {
   .company-item__desc h3 {
     font-size: 25px;
     padding-bottom: 18px;
+  }
+  .about-company__item p{
+    text-align: left;
+  }
+  .slide-info p{
+    text-align: 15px;
+    text-align: center;
+  }
+  .slideshow-info p{
+    
+    padding-top: 10px;
+    font-size: 14px;
+
   }
 }

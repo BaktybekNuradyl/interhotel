@@ -1,3 +1,4 @@
+
 //    fixed menu  bg
 
 let programFix = document.querySelector('.nav-fixed');
@@ -17,6 +18,8 @@ const progFixed = () => {
 window.addEventListener("scroll", () => {
   progFixed();
 });
+
+
 
 
 //    burger
